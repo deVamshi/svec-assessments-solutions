@@ -13,9 +13,7 @@ int main(void) {
 		  len += 1;
 	  }
   }
-  len ?
-	  printf("\nThe new string lenght is: %d", len) :
-	  	printf("%d", -1);
+  len ? printf("\nThe new string lenght is: %d", len) : printf("%d", -1);
   return 0;
 }
 
