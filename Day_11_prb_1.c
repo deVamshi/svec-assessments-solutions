@@ -5,9 +5,7 @@ int main(void) {
   int k, j;
   scanf("%[^\n]*c", str);
   scanf("%d", &k);
-  for(int i = 0; i < strlen(str); i++){
-	  for(j = 0; j < k; j++) printf("%c", str[i]);
-  }
+  for(int i = 0; i < strlen(str); i++) for(j = 0; j < k; j++) printf("%c", str[i]);
   return 0;
 }
 /*
