@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 int main(){
-	char str[2000], prev_char;
-	char temp;
+	char str[2000], prev_char, temp;
 	scanf("%[^\n]*c", str);
 	for(int i = 0; i < strlen(str); i++){
 		for(int j = 0; j < strlen(str); j++){
