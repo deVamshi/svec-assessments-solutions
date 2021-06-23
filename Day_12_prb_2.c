@@ -8,9 +8,7 @@ struct Employee
 
 int main(void)
 {
-    int j, N, one = 0, two = 0, three = 0;
-    float lowest_total, cur_marks_total;
-    int pos1 = 0, pos2 = 0, pos3 = 0;
+    int j, N;
     scanf("%d", &N);
     struct Employee emp_list[N], emp;
     int salaries[N];
@@ -19,31 +17,24 @@ int main(void)
         getchar();
         scanf("%[^\n]%*c", emp.name);
         scanf("%d", &emp.salary);
-        salaries[j] = emp.salary;
         emp_list[j] = emp;
     }
-    for (int i = 0; i < N; i++)
+    int max, max_at[3] = {-1, -1, -1};
+    for (int l = 0; l < 3; l++)
     {
-        for (int k = 0; k < N; k++)
+        max = 0;
+        for (int i = 0; i < N; i++)
         {
-            if (salaries[i] > salaries[j])
+            if (i == max_at[0] || i == max_at[1] || i == max_at[2])
+                continue;
+            if (emp_list[i].salary >= max)
             {
-                int temp = salaries[i];
-                salaries[i] = salaries[j];
-                salaries[j] = salaries[i];
+                max = emp_list[i].salary;
+                max_at[l] = i;
             }
         }
-    }
-    for (int i = 0; i < 3; i++)
-    {
-        int cur_salary = salaries[i];
-        for (int p = N - 1; p >= 0; p--)
-        {
-            if (emp_list[p].salary == cur_salary)
-            {
-                printf("%s\n", emp_list[p].name);
-            }
-        }
+        // printf("max at 1st iteration %i\n", max_at[l]);
+        printf("%s\n", emp_list[max_at[l]].name);
     }
 
     return 0;
