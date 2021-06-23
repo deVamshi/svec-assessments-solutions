@@ -9,7 +9,6 @@ struct Employee
 int main(void)
 {
     int j, N, one = 0, two = 0, three = 0;
-
     float lowest_total, cur_marks_total;
     int pos1 = 0, pos2 = 0, pos3 = 0;
     scanf("%d", &N);
