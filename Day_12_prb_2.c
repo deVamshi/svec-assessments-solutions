@@ -33,7 +33,6 @@ int main(void)
                 max_at[l] = i;
             }
         }
-        // printf("max at 1st iteration %i\n", max_at[l]);
         printf("%s\n", emp_list[max_at[l]].name);
     }
 
