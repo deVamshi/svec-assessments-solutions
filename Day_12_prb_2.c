@@ -35,7 +35,7 @@ int main(void)
         }
         printf("%s\n", emp_list[max_at[l]].name);
     }
-
+    
     return 0;
 }
 
