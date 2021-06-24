@@ -1,33 +1,40 @@
 #include <stdio.h>
-int main(){
+int main()
+{
 	char f_name[30];
 	int nc, count = 0;
 	FILE *f;
 	scanf("%[^\n]%*c", f_name);
 	scanf("%i", &nc);
-	if((f = fopen(f_name, "r")) == NULL){
+	if ((f = fopen(f_name, "r")) == NULL)
+	{
 		printf("File doesn't exist");
 		return 0;
 	}
-	if(nc <= 0){
+	if (nc <= 0)
+	{
 		printf("Invalid Input");
 		return 0;
 	}
-	while(fgetc(f) != EOF){
+	while (fgetc(f) != EOF)
+	{
 		count++;
-		if(count > nc) break;
+		if (count > nc)
+			break;
 	}
-	if(count <= nc){
+	if (count <= nc)
+	{
 		printf("Invalid Input");
 		return 0;
 	}
 	fseek(f, -nc, SEEK_END);
-	while(nc){
+	while (nc)
+	{
 		char c = fgetc(f);
 		putchar(c);
 		nc--;
 	}
-	
+
 	return 0;
 }
 /*
